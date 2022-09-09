@@ -3,12 +3,13 @@
 #include <stdio.h>
 
 /**
- * main - entry point
+ * main - Entry point
  *
- * return: Always 0 (Success/correct)
+ * Return: Always 0 (Success/correct)
  */
 
 int main(void)
+
 {
 int n;
 
