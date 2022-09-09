@@ -26,6 +26,6 @@ else if (n < 0)
 else
 {
 	printf("%d is positive\n", n);
-}	
+}
 return (0);
 }
