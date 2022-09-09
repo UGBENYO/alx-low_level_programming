@@ -6,26 +6,41 @@
  */
 int main(void)
 {
-	int digit1, digit2, digit3;
+	int u = 50;
+	int d = 49;
+	int c = 48;
+	int position_u = u;
+	int position_d = d;
+	int position_uu = u;
 
-	for (digit1 = 0; digit1 < 9; digit1++)
+	while (c <= 55)
 	{
-		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
+		while (d <= 56)
 		{
-			for (digit3 = digit2 + 1; digit3 < 10; digit3++)
+			while (u <= 57)
 			{
-				putchar((digit1 % 10) + '0');
-				putchar((digit1 % 10) + '0');
-				
-				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
-				       continue;
-
-			    	putchar(',');
-				putchar(' ');
+				putchar(c);
+				putchar(d);
+				putchar(u);
+				if (c != 55 || d != 56 || u != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+				u++;
 			}
+			d++;
+			position_u++;
+			u = position_u;
 		}
+		position_u = position_uu;
+		position_u++;
+		position_uu++;
+		u = position_u;
+		position_d++;
+		d = position_d;
+		c++;
 	}
- 	putchar('\n');
-
+	putchar('\n');
 	return (0);
 }
