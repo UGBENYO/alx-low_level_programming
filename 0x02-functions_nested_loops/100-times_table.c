@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * times_table - prints times table
+ * print_times_table - prints times table
  * @n : times table to use
  * Return:void
  */
 
-void times_table(int n)
+void print_times_table(int n)
 {
 	int x, y, z;
 
