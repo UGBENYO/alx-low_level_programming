@@ -10,6 +10,7 @@ int isPrintableASCII(int n)
 {
 	return (n >= 32 && n <= 126);
 }
+
 /**
  * printHexes - print hex values for string b in formatted form
  * @b: string to print
@@ -32,6 +33,7 @@ void printHexes(char *b, int start, int end)
 		i++;
 	}
 }
+
 /**
  * printASCII - print ascii values for string b,
  * formatted to replace nonprintable chars with '.'
