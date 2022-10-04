@@ -1,7 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+/**
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
+ */
+int _strlen(char *s)
+{
+	int size = 0;
 
+	for (; s[size] != '\0'; size++)
+		;
+	return (size);
+}
 /**
  * str_concat - concantenates 2 strings
  * a NULL string is treated as an empty string
@@ -12,42 +24,26 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int len1, len2, size, i, j;
-	char *nstr;
+	int size1, size2, i;
+	char *m;
 
 	if (s1 == NULL)
-		s1 = "";
+		s1 = "\0";
 	if (s2 == NULL)
-		s2 = "";
+		s2 = "\0";
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+	m = malloc((size1 + size2) * sizeof(char) + 1);
+	if (m == 0)
+		return (0);
 
-	len1 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	while (s2[len2] != '\0')
-		len2++;
-
-	size = len1 + len2;
-
-	nstr = malloc((sizeof(char) * size) + 1);
-
-	if (nstr == NULL)
-		return (NULL);
-
-	i = 0;
-	while (i < len1)
+	for (i = 0; i <= size1 + size2; i++)
 	{
-		nstr[i] = s1[i];
-		i++;
+		if (i < size1)
+			m[i] = s1[i];
+		else
+			m[i] = s2[i - size1];
 	}
-
-	j = 0;
-	while (i <= size)
-	{
-		nstr[i] = s2[j];
-		i++;
-		j++;
-	}
-	return (nstr);
+	m[i] = '\0';
+	return (m);
 }
-
-
