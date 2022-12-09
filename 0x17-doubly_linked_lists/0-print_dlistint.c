@@ -2,7 +2,7 @@
 /**
  * print_dlistint - prints all the elements of a
  * dlistint_t list
- * @head: head of the list
+ * @h: head of the list
  * Return: the number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
